@@ -19,7 +19,7 @@ public class AmqpListenerService {
     }
 
     @RabbitListener(queues = "${amqp.logging.queue}")
-    public void verifyListener(final UserEvent event) {
+    public void loggingListener(final UserEvent event) {
         LOGGER.info("Received logging message: {} from motel-666.", event);
         userEventService.saveLog(event);
     }
